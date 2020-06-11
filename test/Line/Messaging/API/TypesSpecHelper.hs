@@ -272,7 +272,6 @@ noPicProfile = [r|
 {
   "userId": "123",
   "displayName": "Jun",
-  "pictureUrl": null,
   "statusMessage": "some status message"
 }
 |]
@@ -282,8 +281,7 @@ noDescProfile = [r|
 {
   "userId": "123",
   "displayName": "Jun",
-  "pictureUrl": "https://example.com/profile.jpg",
-  "statusMessage": null
+  "pictureUrl": "https://example.com/profile.jpg"
 }
 |]
 
@@ -291,9 +289,7 @@ simpleProfile :: BL.ByteString
 simpleProfile = [r|
 {
   "userId": "123",
-  "displayName": "Jun",
-  "pictureUrl": null,
-  "statusMessage": null
+  "displayName": "Jun"
 }
 |]
 

@@ -50,7 +50,7 @@ module Line.Messaging.API.Types (
 
 import Control.Applicative ((<|>))
 import Control.Exception (SomeException)
-import Data.Aeson (FromJSON(..), ToJSON(..), Value(..), object, (.:), (.=))
+import Data.Aeson (FromJSON(..), ToJSON(..), Value(..), object, (.:), (.=), (.:?))
 import Data.Aeson.Types (Pair)
 import Data.Maybe (maybeToList)
 import Line.Messaging.Common.Types
@@ -522,8 +522,8 @@ data Profile = Profile { getUserID :: ID
 instance FromJSON Profile where
   parseJSON (Object v) = Profile <$> v .: "userId"
                                  <*> v .: "displayName"
-                                 <*> v .: "pictureUrl"
-                                 <*> v .: "statusMessage"
+                                 <*> v .:? "pictureUrl"
+                                 <*> v .:? "statusMessage"
   parseJSON _ = fail "Profile"
 
 -- | An error type possibly returned from the
