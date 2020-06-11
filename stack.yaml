@@ -1,6 +1,7 @@
-resolver: lts-9.5
+resolver: lts-15.13
 packages:
-- '.'
-extra-deps: []
+ - '.'
+extra-deps: 
+- regex-posix-clib-2.7
 flags: {}
 extra-package-dbs: []
